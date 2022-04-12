@@ -12,13 +12,13 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * bulletSpeed;
-        Destroy(gameObject, endTime);   
+        Destroy(gameObject, endTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)

@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
     {
         //Debug.Log(string.Format("Horizantal: {0} - Vertical: {1}", joystick.Horizontal, joystick.Vertical));
 
-        transform.Translate(new Vector3(joystick.Horizontal * speed * Time.deltaTime, joystick.Vertical * speed * Time.deltaTime, speed*Time.deltaTime));
+        transform.Translate(new Vector3(joystick.Horizontal * speed * Time.deltaTime, joystick.Vertical * speed * Time.deltaTime, speed * Time.deltaTime));
 
         if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
         {
@@ -37,6 +37,6 @@ public class Move : MonoBehaviour
     void CreateEnemy()
     {
         int rnd = Random.Range(5, 10);
-        Instantiate(enemy, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z+rnd), firePoint.rotation);
+        Instantiate(enemy, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z + rnd), firePoint.rotation);
     }
 }
