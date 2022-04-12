@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e2e4e845952054185949eecfab2b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kameraTakip: {fileID: 1350965470}
+  cameraFollow: {fileID: 1350965470}
 --- !u!224 &1111309071 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -5823,7 +5823,7 @@ MonoBehaviour:
   joystick: {fileID: 1111309072}
   speed: 3
   firePoint: {fileID: 94729761}
-  bullet: {fileID: 3471164347903493223, guid: 855ec6d459ec44d429cfa915cadc405a, type: 3}
+  Bullet: {fileID: 3471164347903493223, guid: 855ec6d459ec44d429cfa915cadc405a, type: 3}
   enemy: {fileID: 512949934280346103, guid: ecbf232c0d8a07d48b14b1a14fac2c33, type: 3}
 --- !u!54 &1350965472
 Rigidbody:

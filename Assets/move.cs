@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour
+public class Move : MonoBehaviour
 {
     public Joystick joystick;
     public int speed;
     public Transform firePoint;
-    public GameObject bullet;
+    public GameObject Bullet;
     public GameObject enemy;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class move : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        Instantiate(Bullet, firePoint.position, firePoint.rotation);
     }
 
     void CreateEnemy()

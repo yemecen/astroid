@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class takip : MonoBehaviour
+public class Follow : MonoBehaviour
 {
-    public Transform kameraTakip;
-    Vector3 fark;
+    public Transform cameraFollow;
+    Vector3 distant;
     // Start is called before the first frame update
     void Start()
     {
-        fark=transform.position - kameraTakip.position;
+        distant = transform.position - cameraFollow.position;
     }
 
     // Update is called once per frame
@@ -20,6 +20,6 @@ public class takip : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, kameraTakip.position+fark, Time.deltaTime * 3.0f);   
+        transform.position = Vector3.Lerp(transform.position, cameraFollow.position+ distant, Time.deltaTime * 3.0f);   
     }
 }
