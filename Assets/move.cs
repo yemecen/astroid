@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Move : MonoBehaviour
 {
@@ -9,11 +11,16 @@ public class Move : MonoBehaviour
     public Transform firePoint;
     public GameObject Bullet;
     public GameObject enemy;
+    public Image healthBar;
+    public int initHealth;
+    public int health;
+    public GameObject panel;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("CreateEnemy", 2, 5);
+        initHealth = health;
     }
 
     // Update is called once per frame
@@ -27,6 +34,8 @@ public class Move : MonoBehaviour
         {
             Shoot();
         }
+
+        healthBar.fillAmount = (float)health / (float)initHealth;
     }
 
     void Shoot()
@@ -47,6 +56,14 @@ public class Move : MonoBehaviour
             ShakeController sk = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeController>();
             sk.isShake = true;
 
+            health -= 1;
+            if (health <= 0)
+            {
+                panel.SetActive(true);
+                //panel.transform.GetChild(0).gameObject.SetActive(true);child varsa
+                sk.isShake = false;
+                Time.timeScale=0.0f;
+            }
         }
     }
 }
