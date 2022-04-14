@@ -39,4 +39,14 @@ public class Move : MonoBehaviour
         int rnd = Random.Range(5, 10);
         Instantiate(enemy, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z + rnd), firePoint.rotation);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            ShakeController sk = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeController>();
+            sk.isShake = true;
+
+        }
+    }
 }
