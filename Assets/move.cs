@@ -62,7 +62,7 @@ public class Move : MonoBehaviour
                 panel.SetActive(true);
                 //panel.transform.GetChild(0).gameObject.SetActive(true);child varsa
                 sk.isShake = false;
-                Time.timeScale=0.0f;
+                Time.timeScale = 0.0f;
             }
         }
     }
