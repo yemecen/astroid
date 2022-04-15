@@ -15,7 +15,7 @@ public class Move : MonoBehaviour
     public int initHealth;
     public int health;
     public GameObject panel;
-
+    Text highScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +63,10 @@ public class Move : MonoBehaviour
                 //panel.transform.GetChild(0).gameObject.SetActive(true);child varsa
                 sk.isShake = false;
                 Time.timeScale = 0.0f;
+
+                highScore = GameObject.Find("Canvas/Panel/HighScoreValue").GetComponent<Text>();
+
+                highScore.text = PlayerPrefs.GetInt("highScore").ToString();
             }
         }
     }

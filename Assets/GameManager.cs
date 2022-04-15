@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         text.text = score.ToString();
+        //Debug.Log(PlayerPrefs.GetInt("highScore").ToString());
+        if (score > PlayerPrefs.GetInt("highScore"))
+        {
+            PlayerPrefs.SetInt("highScore", score);
+        }
     }
     public void GameExit()
     {
