@@ -30,6 +30,26 @@ public class Move : MonoBehaviour
 
         transform.Translate(new Vector3(joystick.Horizontal * speed * Time.deltaTime, joystick.Vertical * speed * Time.deltaTime, speed * Time.deltaTime));
 
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-3.30f,3.30f),Mathf.Clamp(transform.position.y,0.50f,2.50f),transform.position.z);
+
+        if (joystick.Horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -30);
+        }
+        else if (joystick.Horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 30);
+        }
+        else if (joystick.Horizontal == 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
+            
+            /*
+             *smooth skip
+             *transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.Euler(0,0,0),30*Time.deltaTime);
+             */
+        }
+
         if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
         {
             Shoot();
